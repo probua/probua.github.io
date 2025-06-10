@@ -1,6 +1,6 @@
 {
-  "homepage": "https://probua.github.io/blog",
-  "name": "blog",
+  "homepage": "https://probua.github.io/react-blog",
+  "name": "react-blog",
   "private": true,
   "version": "0.0.0",
   "type": "module",
