@@ -2,12 +2,13 @@ import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
 
-// Necesario para obtener __dirname en módulos ES
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const dirPath = path.join(__dirname, '../../content');
+const dirPath = path.join(__dirname, '../src/content');
+const dirPathPages = path.join(__dirname, '../src/pages/content');
 let postlist = [];
+let pagelist = [];
 
 const getPosts = async () => {
     try {
@@ -20,14 +21,12 @@ const getPosts = async () => {
 
             const data = await fs.promises.readFile(`${dirPath}/${file}`, 'utf8');
 
-            // Tutorial process
-
             const getMetaDataIndices = (acc, line, index) => {
                 if (line.startsWith('---')) {
                     if (acc.length % 2 === 0) {
-                        acc.push(index); // Inicio de metadata
+                        acc.push(index);
                     } else {
-                        acc.push(index); // Fin de metadata
+                        acc.push(index);
                     }
                 }
                 return acc;
@@ -52,12 +51,10 @@ const getPosts = async () => {
 
             const lines = data.split('\n');
             const metaDataIndices = lines.reduce(getMetaDataIndices, []);
-            //console.log(`metadata indices:`, metaDataIndices);
             const metadata = parseMetadata({lines, metaDataIndices});
             const content = parseContent({lines, metaDataIndices});
             const date = new Date(metadata.date);
             const timestamp = date.getTime() / 1000;
-            console.log(timestamp);
 
             post = {
                 id: timestamp,
@@ -71,7 +68,7 @@ const getPosts = async () => {
         }
 
     } catch (err) {
-        console.error('Error al leer archivos:', err);
+        console.error('getPost error:', err);
     }
 
     const sortedList = postlist.sort((a, b) => {
@@ -82,4 +79,31 @@ const getPosts = async () => {
     fs.writeFileSync("src/posts.json", data, 'utf8')
 };
 
+const getPages = async () => {
+    try {
+        const files = await fs.promises.readdir(dirPathPages);
+
+        for (let i = 0; i < files.length; i++) {
+            const file = files[i];
+            let page;
+
+            const data = await fs.promises.readFile(`${dirPathPages}/${file}`, 'utf8');
+
+            //console.log(data);
+            page = {
+                filename: file,
+                content: data
+            };
+            pagelist.push(page);
+        }
+
+    } catch (err) {
+        console.error('getPages error:', err);
+    }
+
+    let data = JSON.stringify(pagelist);
+    fs.writeFileSync("src/pages.json", data, 'utf8')
+};
+
 getPosts();
+getPages();

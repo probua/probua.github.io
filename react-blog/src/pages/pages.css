@@ -3,3 +3,23 @@
     margin: auto;
     text-align: center;
 }
+
+.page-content {
+    width: 40%;
+    margin: auto;
+    text-align: center;
+}
+
+.page-title {
+    text-align: center;
+    margin: 40px;
+}
+
+.notfound {
+    text-align: center;
+}
+
+.post {
+    width: 40%;
+    margin: auto;
+}

@@ -1,7 +1,16 @@
 h1 {
-    font-family: "Raleway";
     font-weight: 500;
     margin: 0;
+}
+
+.links {
+    text-decoration: none;
+    color: brown;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
 }
 
 .layout {
@@ -27,7 +36,6 @@ h1 {
 
 .post-card {
     text-align: left;
-    font-family: "Raleway";
     border: 1px solid lightblue;
     margin-bottom: 20px;
     padding: 0 20px;
