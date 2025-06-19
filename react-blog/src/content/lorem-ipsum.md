@@ -1,6 +1,6 @@
 ---
-title: Mi segundo post!
-author: AA
+title: Lorem Ipsum
+author: Alejandro Aguilar
 date: June 11, 2025
 ---
 
@@ -9,13 +9,3 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vestibulum, ex at
 Curabitur leo dolor, iaculis et consequat id, finibus nec est. Mauris vulputate interdum mi, ut tincidunt purus lacinia eget. Morbi mattis vulputate dolor, a posuere dui malesuada a. Duis in magna quis arcu euismod molestie. Aenean id sodales sapien. In elementum euismod enim, vitae congue lacus laoreet vel. Donec et massa ultricies, varius sem sed, mollis nibh. Duis faucibus nisi fringilla neque tristique aliquet. Morbi quis porttitor lacus. Donec mi mi, pretium vitae aliquet sed, bibendum a sem.
 
 Vestibulum molestie luctus ultrices. Quisque interdum auctor quam et suscipit. Phasellus congue nunc nisl, at laoreet nibh scelerisque in. Etiam ut pretium dolor. Vestibulum id suscipit tortor. Mauris volutpat dapibus lorem nec porttitor. Phasellus fermentum maximus lectus sit amet mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in porttitor tortor. Nullam facilisis eros sed iaculis pretium. Aliquam euismod, lacus pellentesque dignissim posuere, massa tellus tempus mi, sit amet rhoncus magna ex finibus tellus. Etiam fringilla nunc diam, eu vulputate mi sollicitudin at. Suspendisse potenti.
-
-<iframe 
-  width="560" 
-  height="315" 
-  src="https://www.youtube.com/embed/XjIJmdztNIs" 
-  title="YouTube video player"
-  frameborder="0" 
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-  allowfullscreen
-></iframe>
